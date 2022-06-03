@@ -1,0 +1,46 @@
+.topnav {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    overflow: hidden;
+    background-color: #333;
+    font-family: 'Jost', sans-serif;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: white;
+    margin-left: 7vh;
+    margin-top: 2vh;
+}
+
+.nav {
+    display: flex;
+    width: 10%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 7vh;
+}
+
+.nav-in {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 7vh;
+}
+
+.route {
+    color: white;
+    text-decoration: none;
+}
+
+.route:hover {
+    color: rgb(203, 203, 203);
+    cursor: pointer;
+}

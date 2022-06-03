@@ -1,0 +1,73 @@
+.container-card-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 4vh;
+}
+
+.card-user {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50vw;
+    height: 72vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-info {
+    margin-left: 4vw;
+}
+
+.card-describe {
+    display: flex;
+    justify-content: space-around;
+    height: 45vh;
+}
+
+.card-items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    width: 24vw;
+}
+
+#item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 245, 245);
+    width: 90%;
+    height: 4vh;
+    border-radius: 3px;
+    padding: 1vh;
+    margin-bottom: 2vh;
+}
+
+h4 {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.update-user {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2vw;
+    cursor: pointer;
+}
+
+.input-update-pseudo {
+    display: none;
+}
+
+.ico-check {
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 430;
+}

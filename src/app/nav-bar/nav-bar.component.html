@@ -1,0 +1,18 @@
+<div class="topnav">
+    <div class="title">
+      <h2>Angular Social</h2>
+    </div>
+    
+    <div *ngIf="access();else connected" class="nav-in">
+        <a class="route" routerLink="/app-collection-users" routerLinkActive="activebutton">Liste utilisateurs</a>
+        <a class="route" routerLink="/app-collection-item" routerLinkActive="activebutton">Liste articles</a>
+        <a class="route" (click)="deconnected()">Deconnexion</a>
+    </div>
+
+    <ng-template #connected> 
+        <div class="nav">
+            <a class="route" routerLink="/app-connect" routerLinkActive="activebutton">Connexion</a>
+            <a class="route" routerLink="/app-subscribe" routerLinkActive="activebutton">Inscription</a>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,81 @@
+
+<div class="container-title-item">
+    <h2>Liste des articles</h2>
+    <label></label>
+</div>
+
+<div class="container-editor-item">
+    <angular-editor [config]="config" [(ngModel)]="htmlContent"></angular-editor>
+    <div class="container-editor-function">
+        <input [(ngModel)]="htmlTitleContent" class="input-editor" placeholder="Titre" type="text">
+        <input class="btn-editor-action" (click)="postItem()" value="Ajouter un article" type="submit">
+        <span class="errorPostItem">{{ errorPostItem }}</span>
+    </div>
+</div>
+
+<div class="container-items">
+    <div *ngFor="let item of items">
+        <div *ngIf="item.titre">
+            <div class="container-item">
+                <div class="container-item-title">
+                    <h2>{{ item.titre }}</h2>
+                    <div class="ico-mange-item" *ngIf="item.id == idUserConnected"> <!--*ngIf="item.id == idUserConnected"-->
+                        <fa-icon (click)="displayManagerItem()" [style]="styleSetting" class="ico fa-lg" [icon]="faEllipsis"></fa-icon>
+                        <fa-icon (click)="deleteItem(item.id_article)" [style]="styleSettingAction" class="ico fa-lg" [icon]="faTrash"></fa-icon>
+                        <fa-icon (click)="openModalUpdate(item.id_article, item.titre, item.contenu)" [style]="styleSettingAction" class="ico fa-lg" [icon]="faPenToSquare"></fa-icon>
+                    </div>
+                </div>
+                <div id="separe">
+                    <hr>
+                </div>
+                
+                <div class="container-item-describe">
+                    <label>{{ item.contenu | slice:0:512 }}</label>
+                </div>
+                <div class="container-item-creator">
+                    <span>Ecrit par : {{ item.pseudo }}</span>
+                </div>
+            </div>
+    
+            <div class="comm">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Commentaire : {{ item.numComments }}
+                        </mat-panel-title>
+                        <!--<mat-panel-description>
+                          Nombre de commentaire
+                        </mat-panel-description>-->
+                      </mat-expansion-panel-header>
+                      <p *ngFor="let comm of item.comments">{{ comm }}</p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+    
+            <div class="container-item-commentaire">
+                <textarea  [(ngModel)]="commentContent" placeholder="Réagissez à cette article" id="item-commentaire"></textarea>
+                <input id="item-commentaire-action" (click)="sendComment(item.id_article)" value="Ajouter" type="submit">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div [style]="styleModal" class="container-modal-update-item">
+    <div class="modal-update-item">
+        <div class="modal-update-title">
+            <fa-icon (click)="closeModal()" class="ico fa-lg" [icon]="faXmark"></fa-icon>
+        </div>
+
+        <div class="modal-update-content">
+            <input [(ngModel)]="titleModal" class="modal-update-title-input" [value]="titleModal" type="text">
+            <textarea [(ngModel)]="describModal" class="modal-update-content-textarea" [value]="describModal"></textarea>
+        </div>
+
+        <div class="collection-btn-modal">
+            <button (click)="closeModal()" class="btn-action close">Annuler</button>
+            <button (click)="updateItem()" class="btn-action update">Modifier</button>
+        </div>
+    </div>
+</div>
+

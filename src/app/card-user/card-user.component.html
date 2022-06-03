@@ -1,0 +1,41 @@
+<div class="container-card-user">
+    <div class="card-user">
+
+        <div class="update-user" *ngIf="id == idUserConnected">
+            <fa-icon  [style]="styleLabelPseudo" (click)="changeVuUser()" class="ico fa-lg" [icon]="faPenToSquare"></fa-icon>
+            <label [style]="styleInputPseudo" (click)="updateUser()" class="ico-check fa-lg">Envoyer</label>
+        </div>
+        <div class="card-title">
+            <img width="90" height="90" id="ico-angular" src="../../assets/img/ico-angular.png" alt="Angular">
+            <label [style]="styleLabelPseudo">{{ user.pseudo | uppercase }}</label>
+            <input [style]="styleInputPseudo" class="input-update-pseudo" type="text" [(ngModel)]="user.pseudo">
+        </div>
+        
+        <!--<div class="card-info">
+            <label for="">Email : </label>
+            <span>{{ user.email}}</span>
+        </div>-->
+
+        <div class="card-describe">
+            <div class="card-items">
+                <div>
+                    <h2>5 derniers articles de l'utilisateur</h2>
+                </div>
+                
+                <div *ngFor="let item of items" id="item">
+                    <h4>{{ item.titre }}</h4>
+                    <p>{{ item.contenu}}</p>
+                </div>
+            </div>
+            <div class="card-items">
+                <div>
+                    <h2>5 derniers commentaires de l'utilisateur</h2>
+                </div>
+                
+                <div *ngFor="let comm of comms" id="item">
+                    <label for="">{{comm | slice:0:50 }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

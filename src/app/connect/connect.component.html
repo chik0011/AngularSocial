@@ -1,0 +1,16 @@
+
+<div id="container">
+    <div class="connection-form">
+        <div class="img-container">
+            <img width="90" height="90" id="ico-angular" src="../../assets/img/ico-angular.png" alt="Angular">
+        </div>
+        
+        <form [formGroup]="connectForm" id="form-connect" (ngSubmit)="submitForm()">
+            <input class="connection-input" placeholder="Email" type="email" formControlName="email">
+            <input class="connection-input" placeholder="Mot de passe" type="password" formControlName="pass">
+            <input id="send" type="submit" value="Connecter">
+        </form>
+        
+        <span id="error" [style]="error">{{ msgError }}</span>
+    </div>
+</div>

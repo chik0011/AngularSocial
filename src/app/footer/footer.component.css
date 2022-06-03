@@ -1,0 +1,11 @@
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    height: 7vh;
+    font-family: 'Jost', sans-serif;
+    color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    z-index: 50;
+}

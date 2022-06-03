@@ -1,0 +1,27 @@
+.container-tab-users {
+    display: flex;
+    margin-left: 20vw;
+}
+
+.container-tab-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20vw;
+    margin-top: 5vh;
+}
+
+.table-user {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 4vh;
+}
+
+table {
+    width: 100%;
+}
+
+tr:hover {
+    background-color: #a6c7ed;
+    cursor: pointer;
+  }
